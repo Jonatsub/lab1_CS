@@ -1,0 +1,27 @@
+Anomaly detection for SSH failures per minute
+
+Minute 1: 2 failed SSH attempts -> normal
+Minute 2: 3 failed SSH attempts -> normal
+Minute 3: 2 failed SSH attempts -> normal
+Minute 4: 4 failed SSH attempts -> normal
+Minute 5: 3 failed SSH attempts -> normal
+Minute 6: 2 failed SSH attempts -> normal
+Minute 7: 4 failed SSH attempts -> normal
+Minute 8: 3 failed SSH attempts -> normal
+Minute 9: 2 failed SSH attempts -> normal
+Minute 10: 5 failed SSH attempts -> normal
+Minute 11: 3 failed SSH attempts -> normal
+Minute 12: 2 failed SSH attempts -> normal
+Minute 13: 4 failed SSH attempts -> normal
+Minute 14: 5 failed SSH attempts -> normal
+Minute 15: 3 failed SSH attempts -> normal
+Minute 16: 4 failed SSH attempts -> normal
+Minute 17: 5 failed SSH attempts -> normal
+Minute 18: 3 failed SSH attempts -> normal
+Minute 19: 2 failed SSH attempts -> normal
+Minute 20: 16 failed SSH attempts -> ANOMALY
+
+Summary:
+Minutes analyzed: 20
+Anomalies found: 1
+Conclusion: The script found unusual behavior in the data.
