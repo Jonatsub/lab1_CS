@@ -3,7 +3,11 @@ from sklearn.ensemble import IsolationForest
 
 data = []
 
-with open('/home/tsub/ais-2026/lab1_CS/data/ssh_attempts.csv', newline='') as csvfile:
+from pathlib import Path
+
+DATA_FILE = Path(__file__).resolve().parents[1] / "data" / "ssh_attempts.csv"
+
+with DATA_FILE.open(newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         minute = int(row['minute'])
