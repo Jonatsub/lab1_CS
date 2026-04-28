@@ -92,3 +92,31 @@ I testdatan analyseras 20 minuter med misslyckade SSH-försök, där minut 20 st
 ## Kort sammanfattning
 
 Min labb bygger på att Wazuh står för den regelbaserade och centraliserade övervakningen, medan Python-delen används som ett enkelt komplement för att visa skillnaden mellan vanliga regler och anomalidetektion.
+
+## Hur jag förstår arkitekturen
+
+Så här har jag förstått min labbmiljö:
+
+```text
+Min WSL-miljö
+   |
+   | Wazuh-agenten samlar in information
+   v
+Wazuh Manager
+   |
+   | jämför händelser mot regler
+   v
+Wazuh Indexer
+   |
+   | sparar alerts så att de går att söka på
+   v
+Wazuh Dashboard
+   |
+   | visar agenten, alerts, FIM och dashboard-paneler
+   v
+Screenshots och dokumentation i GitHub
+```
+
+Jag ser det som att agenten är den delen som finns på maskinen som ska övervakas. Den skickar information vidare till Wazuh Manager. Managern analyserar informationen och använder regler för att avgöra om något ska bli ett alert. Indexer sparar datan och dashboarden gör att jag kan se resultatet i webbläsaren.
+
+Python-delen ligger lite vid sidan av Wazuh. Den använder en CSV-fil med testdata och kör IsolationForest för att hitta ett värde som sticker ut. Den är alltså inte direkt kopplad in i Wazuh, utan jag använder den mer för att visa hur enkel anomalidetektion kan fungera.
